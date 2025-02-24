@@ -1,0 +1,134 @@
+{
+  "info": {
+    "name": "API Test Cases GET",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cobrança Bancaria - Consulta Boleto",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/cobranca_bancaria/consultaboleto?dfdl=SDPNSP01" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/cobranca_bancaria/consultaboleto?dfdl=WRONG_VALUE&GCBSW638_CODBENEFCRIO=WRONG" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/cobranca_bancaria/consultaboleto?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/cobranca_bancaria/consultaboleto?dfdl=XYZ&GCBSW638_CODBENEFCRIO=123&GCBSW638_NOSSONUM=14000000009540342" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Fundos Investimentos - Consulta Operação",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultaoperacao?DFDL=0x5838bae120" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultaoperacao?DFDL=0x5838bae120&ARTE_INVESTMENTID=000000000000000000" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultaoperacao?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultaoperacao?DFDL=XYZ&ARTE_INVESTMENTID=123" } }
+      ]
+    },
+    {
+      "name": "Open Finance - Fundos Investimentos - Consulta Saldos",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listainvestimentos?FIXE_NU_CPF_CNPJ=29817510000&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=25&FIXE_NU_POSICAO_INICIAL=1&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listainvestimentos?FIX_CO_USUARIO=ERRADO&FIXE_NU_CPF_CNPJ=99999999999&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=25&FIXE_NU_POSICAO_INICIAL=1&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/listainvestimentos?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listainvestimentos?FIX_CO_USUARIO=SDPNSP01&FIXE_NU_CPF_CNPJ=29817510000&FIXE_NU_PAGINA=10&FIXE_NU_QTDE_REG=100&FIXE_NU_POSICAO_INICIAL=5&FIXE_IC_QTDE_TOTAL=N" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Fundos Investimentos - Lista Investimentos",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultasaldos" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultasaldos?ARTE_INVESTMENTID=9999999999999" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultasaldos?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/consultasaldos?ARTE_INVESTMENTID=123456789012345678" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Fundos Investimentos - Lista Movimentações Históricas",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?FIXE_CO_USUARIO=SDPNSP01&FIXE_INVESTMENT_ID=1142202406070020530634370100058229217590090&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=114&FIXE_NU_POSICAO_INICIAL=229&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?FIXE_CO_USUARIO=SDPNSP01&FIXE_INVESTMENT_ID=99999999999999999999999999999999999999&FIXE_DT_INICIAL=2025-02-01&FIXE_DT_FINAL=2025-02-07&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=114&FIXE_NU_POSICAO_INICIAL=229&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?FIXE_CO_USUARIO=ERRADO&FIXE_INVESTMENT_ID=1142202406070020530634370100058229217590090&FIXE_DT_INICIAL=2024-01-01&FIXE_DT_FINAL=2024-01-07&FIXE_NU_PAGINA=2&FIXE_NU_QTDE_REG=50&FIXE_NU_POSICAO_INICIAL=500&FIXE_IC_QTDE_TOTAL=N" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Renda Fixa - Consulta Operação",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultaoperacao?FIXE_CO_USUARIO=SDPNSP01" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultaoperacao?FIXE_CO_USUARIO=SDPNSP01&FIXE_INVESTMENT_ID=0000000000000000000000000000000000000000" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultaoperacao?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultaoperacao?FIXE_CO_USUARIO=XYZ&FIXE_INVESTMENT_ID=123" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Renda Fixa - Consulta Saldos",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultasaldos?FIXE_CO_USUARIO=SDPNSP01" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultasaldos?FIXE_CO_USUARIO=SDPNSP01&FIXE_INVESTMENT_ID=0000000000000000000000000000000000000000" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultasaldos?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/consultasaldos?FIXE_CO_USUARIO=XYZ&FIXE_INVESTMENT_ID=123" } }
+      ]
+    },
+    {
+      "name": "Open Finance - Renda Fixa - Lista Investimentos",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listainvestimentos?FIXE_NU_CPF_CNPJ=29817510000&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=25&FIXE_NU_POSICAO_INICIAL=1&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listainvestimentos?FIX_CO_USUARIO=ERRADO&FIXE_NU_CPF_CNPJ=99999999999&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=25&FIXE_NU_POSICAO_INICIAL=1&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/fundos_investimentos/listainvestimentos?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listainvestimentos?FIX_CO_USUARIO=SDPNSP01&FIXE_NU_CPF_CNPJ=29817510000&FIXE_NU_PAGINA=10&FIXE_NU_QTDE_REG=100&FIXE_NU_POSICAO_INICIAL=5&FIXE_IC_QTDE_TOTAL=N" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Renda Fixa - Lista Movimentações Históricas",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?FIXE_CO_USUARIO=SDPNSP01&FIXE_INVESTMENT_ID=1142202406070020530634370100058229217590090&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=114&FIXE_NU_POSICAO_INICIAL=229&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?FIXE_CO_USUARIO=SDPNSP01&FIXE_INVESTMENT_ID=99999999999999999999999999999999999999&FIXE_DT_INICIAL=2025-02-01&FIXE_DT_FINAL=2025-02-07&FIXE_NU_PAGINA=1&FIXE_NU_QTDE_REG=114&FIXE_NU_POSICAO_INICIAL=229&FIXE_IC_QTDE_TOTAL=S" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/renda_fixa_bancaria/listamovimentacoeshistoricas?FIXE_CO_USUARIO=ERRADO&FIXE_INVESTMENT_ID=1142202406070020530634370100058229217590090&FIXE_DT_INICIAL=2024-01-01&FIXE_DT_FINAL=2024-01-07&FIXE_NU_PAGINA=2&FIXE_NU_QTDE_REG=50&FIXE_NU_POSICAO_INICIAL=500&FIXE_IC_QTDE_TOTAL=N" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Tesouro Direto - Consulta Operação",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultaoperacao" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultaoperacao?WTAN_E_VERSAO=1&WTAN_E_INVESTIMENTO=00000000000000000000000" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultaoperacao?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultaoperacao?WTAN_E_VERSAO=999&WTAN_E_INVESTIMENTO=10400000050607601981508202418102010000000000089693" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Tesouro Direto - Consulta Saldos",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultasaldos" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultasaldos?WTAN_E_VERSAO=1&WTAN_E_INVESTIMENTO=00000000000000000000000" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultasaldos?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/consultasaldos?WTAN_E_VERSAO=999&WTAN_E_INVESTIMENTO=10400000050607601981508202418102010000000000089693" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Tesouro Direto - Lista Investimentos",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listainvestimentos?WTAN_E_VERSAO=1" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listainvestimentos?WTAN_E_VERSAO=000&WTAN_E_NU_CLIENTE_CPF=00000000000" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listainvestimentos?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listainvestimentos?WTAN_E_VERSAO=99&WTAN_E_NU_CLIENTE_CPF=12345678901" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Tesouro Direto - Lista Movimentações Históricas",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoeshistoricas?WTAN_E_VERSAO=1&WTAN_E_INVESTIMENTO=10400000050607601981508202418102010000000000089683&WTAN_E_DD_INICIAL=07&WTAN_E_MM_INICIAL=02&WTAN_E_AA_INICIAL=2024&WTAN_E_DD_FINAL=07&WTAN_E_AA_FINAL=2025" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoeshistoricas?WTAN_E_VERSAO=1&WTAN_E_INVESTIMENTO=999999999999999999999999999999999999&WTAN_E_DD_INICIAL=07&WTAN_E_MM_INICIAL=02&WTAN_E_AA_INICIAL=2024&WTAN_E_DD_FINAL=07&WTAN_E_MM_FINAL=02&WTAN_E_AA_FINAL=2025" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoeshistoricas?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoeshistoricas?WTAN_E_VERSAO=999&WTAN_E_INVESTIMENTO=10400000050607601981508202418102010000000000089683&WTAN_E_DD_INICIAL=07&WTAN_E_MM_INICIAL=02&WTAN_E_AA_INICIAL=2024&WTAN_E_DD_FINAL=07&WTAN_E_MM_FINAL=02&WTAN_E_AA_FINAL=2025" } }
+      ]
+    },
+	{
+      "name": "Open Finance - Tesouro Direto - Lista Movimentações Recentes",
+      "item": [
+        { "name": "Erro 400", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoesrecentes?WTAN_E_VERSAO=1&WTAN_E_INVESTIMENTO=10400000050607601981508202418102010000000000089683&WTAN_E_DD_INICIAL=31&WTAN_E_MM_INICIAL=01&WTAN_E_AA_INICIAL=2025&WTAN_E_DD_FINAL=07&WTAN_E_AA_FINAL=2025" } },
+        { "name": "Erro 404", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoesrecentes?WTAN_E_VERSAO=1&WTAN_E_INVESTIMENTO=999999999999999999999999999999999999&WTAN_E_DD_INICIAL=31&WTAN_E_MM_INICIAL=01&WTAN_E_AA_INICIAL=2025&WTAN_E_DD_FINAL=07&WTAN_E_MM_FINAL=02&WTAN_E_AA_FINAL=2025" } },
+        { "name": "Erro 500", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoesrecentes?mock=error" } },
+        { "name": "Erro 422", "request": { "method": "GET", "url": "https://apim-sigsr-des02.azure-api.net/tesouro_direto/listamovimentacoesrecentes?WTAN_E_VERSAO=999&WTAN_E_INVESTIMENTO=10400000050607601981508202418102010000000000089683&WTAN_E_DD_INICIAL=31&WTAN_E_MM_INICIAL=01&WTAN_E_AA_INICIAL=2025&WTAN_E_DD_FINAL=07&WTAN_E_MM_FINAL=02&WTAN_E_AA_FINAL=2025" } }
+      ]
+    },
+  ]
+}
